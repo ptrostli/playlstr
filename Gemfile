@@ -51,5 +51,7 @@ gem 'database_cleaner', group: [:development, :test]
 gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
+gem 'active_model_serializers'
+gem 'rspotify'
 gem 'foundation-rails', '~> 6.5'
 gem 'webpacker', '~> 3.3'
