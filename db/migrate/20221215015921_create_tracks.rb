@@ -6,9 +6,9 @@ class CreateTracks < ActiveRecord::Migration[5.2]
       t.string :album, null:false 
       t.integer :length, null:false 
       t.string :spotify_id
+      t.string :external_url
+      t.string :preview_url
       t.string :image
-      t.string :url
-      t.string :sample
 
       t.belongs_to :playlist
 

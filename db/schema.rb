@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2022_12_15_015921) do
     t.string "album", null: false
     t.integer "length", null: false
     t.string "spotify_id"
+    t.string "external_url"
+    t.string "preview_url"
     t.string "image"
-    t.string "url"
-    t.string "sample"
     t.bigint "playlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

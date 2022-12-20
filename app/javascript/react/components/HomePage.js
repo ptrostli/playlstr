@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import FeaturedPlaylistTile from "./FeaturedPlaylistTile";
+import React from "react";
 
-const HomePage = (props) => {
+export default HomePage = (props) => {
 
   return (
     <div className="home-page">
@@ -10,5 +8,3 @@ const HomePage = (props) => {
     </div>
   )
 }
-
-export default HomePage

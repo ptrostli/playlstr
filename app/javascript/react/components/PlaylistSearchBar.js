@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const PlaylistSearchBar = (props) => {
+export default PlaylistSearchBar = (props) => {
   const [searchString, setSearchString] = useState("")
 
   const handleChange = (event) => {
@@ -53,5 +53,3 @@ const PlaylistSearchBar = (props) => {
     </div>
   )
 }
-
-export default PlaylistSearchBar
