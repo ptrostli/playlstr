@@ -16,6 +16,7 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+RSpotify::authenticate("a9b02aefeb5f4fba8796911337e2713b", "a8d5866b10f5476f8cda96118a865025")
 
 module Playlstr
   class Application < Rails::Application
