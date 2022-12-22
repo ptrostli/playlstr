@@ -1,13 +1,13 @@
 import React from "react";
 
 const TrackTile = (props) => {
-  const {playlist, track} = props
-  console.log(playlist)
-  console.log(track)
+  const {track} = props
 
+  const time = new Date(track.length);
+  
   return (
     <div>
-      <p>{track.name}</p>
+      <p><a href={`${track.external_url}`}>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artist}</a></p>
     </div>
   )
 }

@@ -17,8 +17,8 @@ Prerequisite: have Yarn installed, and Ruby version 2.7.3.
 
 1. Clone the repository
     ```sh
-    - git clone https://github.com/ptrostli/playlstr-dev.git
-    - git clone git@github.com:ptrostli/playlstr-dev.git
+    - git clone https://github.com/ptrostli/playlstr.git
+    - git clone git@github.com:ptrostli/playlstr.git
     ```
     
 2. Install Ruby gems

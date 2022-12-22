@@ -34,7 +34,6 @@ const HomePage = (props) => {
 
   return (
     <div className="home-page">
-      <h1>Hi</h1>
       {playlistsList}
     </div>
   )
