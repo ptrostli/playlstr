@@ -4,7 +4,6 @@ import SearchResultTile from "./SearchResultTile";
 
 const PlaylistShowContainer = (props) => {
   const playlistId = props.match.params.playlistId
-  const [shouldDisplay, setShouldDisplay] = useState(true)
   const [searchTracks, setSearchTracks] = useState("")
   const [searchResults, setSearchResults] = useState([])
   const [playlist, setPlaylist] = useState({
@@ -20,7 +19,10 @@ const PlaylistShowContainer = (props) => {
         throw(error)
       } 
       const fetchedPlaylist = await response.json()
-      setPlaylist({...fetchedPlaylist, tracks: [...fetchedPlaylist.tracks]})
+      setPlaylist({
+        ...fetchedPlaylist, 
+        tracks: [...fetchedPlaylist.tracks]
+      })
     } catch(err) {
       console.error(`ERROR: ${err.message}`)
     }
@@ -47,51 +49,14 @@ const PlaylistShowContainer = (props) => {
     performSearch(searchTracks)
   }
 
-  const handleAddTrack = async() => {
-    try {
-      const requestBody = {
-        track: {
-          name: track.name,
-          album: track.album.name,
-          length: track.duration_ms,
-          artist: track.artists[0].name,
-          spotify_id: track.id,
-          external_url: track.external_urls.spotify,
-          preview_url: track.preview_url,
-          artist_url: track.artists[0].external_urls.spotify,
-          image: track.album.images[2].url
-        },
-      }
-      const response = await fetch(`/api/v1/playlists/${playlistId}/tracks`, {
-        method: "POST",
-        credentials: "same-origin",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(requestBody)
-      })
-      if (!response.ok) {
-        const errorMessage = `${response.status} - (${response.statusText})`
-        const error = new Error(errorMessage)
-        throw(error)
-      }
-      setShouldDisplay(false)
-      const fetchedPlaylist = await response.json()
-      if (fetchedPlaylist.id) {
-        console.log(`Track added.`)
-      }
-    } catch(err) {
-      console.error(`ERROR: ${err.message}`)
-    }
-  }
-
   const searchedResultsList = searchResults.map((searchResult) => {
     return (
       <SearchResultTile 
         key={searchResult.id}
-        result={searchResult}
+        track={searchResult}
         playlistId={playlistId}
+        playlist={playlist}
+        setPlaylist={setPlaylist}
       />
     )
   })
@@ -102,13 +67,10 @@ const PlaylistShowContainer = (props) => {
         key={track.id}
         track={track}
         playlist={playlist}
+        playlistId={playlistId}
       />
     )
   })
-  
-  if (shouldDisplay === false) {
-    return null
-  }
 
   useEffect(() => {
     handleGetPlaylist()
@@ -118,8 +80,8 @@ const PlaylistShowContainer = (props) => {
     <div>
       <h2>{playlist.title}</h2>
       {tracksList}
-      {searchedResultsList}
       <input onChange={handleSearchChange} value={searchTracks} placeholder="Search tracks to add!"/>
+      {searchedResultsList}
     </div>
   )
 }

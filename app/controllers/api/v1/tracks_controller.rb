@@ -1,5 +1,5 @@
 class Api::V1::TracksController < ApiController
-  before_action :authenticate_user!, except: [:index]
+  # before_action :authenticate_user!, except: [:index]
 
   def index
     playlist = Playlist.find(params[:playlist_id])
