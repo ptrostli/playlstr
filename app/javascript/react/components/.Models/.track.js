@@ -1,6 +1,7 @@
 export default class Track {
   constructor(id) {
     this.id = id
+    this.key = id
     this.name = null
     this.artist = null
     this.album = null
@@ -13,6 +14,7 @@ export default class Track {
   }
 
   setAttributes = (track) => {
+    this.key = track.id
     this.id = track.id
     this.name = track.name
     this.artist = track.artist

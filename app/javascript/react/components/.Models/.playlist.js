@@ -75,7 +75,7 @@ export default class Playlist {
       const fetchedPlaylist = await response.json()
       if (fetchedPlaylist.id) {
         console.log('Playlist created!')
-        // this.setAttributes(fetchedPlaylist)
+        this.setAttributes(fetchedPlaylist)
         return fetchedPlaylist
       }
     } catch(err) {
