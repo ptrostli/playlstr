@@ -6,9 +6,8 @@ const PlaylistShowContainer = (props) => {
   const playlistId = props.match.params.playlistId
   const [searchTracks, setSearchTracks] = useState("")
   const [searchResults, setSearchResults] = useState([])
-  const [playlist, setPlaylist] = useState({
-    tracks: []
-  })
+  const [playlist, setPlaylist] = useState({})
+  const [tracks, setTracks] = useState([])
 
   const handleGetPlaylist = async() => {
     try {
@@ -19,10 +18,8 @@ const PlaylistShowContainer = (props) => {
         throw(error)
       } 
       const fetchedPlaylist = await response.json()
-      setPlaylist({
-        ...fetchedPlaylist, 
-        tracks: [...fetchedPlaylist.tracks]
-      })
+      setPlaylist(fetchedPlaylist)
+      setTracks(fetchedPlaylist["tracks"])
     } catch(err) {
       console.error(`ERROR: ${err.message}`)
     }
@@ -61,7 +58,7 @@ const PlaylistShowContainer = (props) => {
     )
   })
 
-  const tracksList = playlist.tracks.map((track) => {
+  const tracksList = tracks.map((track) => {
     return (
       <TrackTile 
         key={track.id}
