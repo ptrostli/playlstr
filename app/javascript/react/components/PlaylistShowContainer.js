@@ -46,14 +46,17 @@ const PlaylistShowContainer = (props) => {
     performSearch(searchTracks)
   }
 
+  const addTrack = (track) => {
+    setTracks([...tracks, track])
+  }
+
   const searchedResultsList = searchResults.map((searchResult) => {
     return (
       <SearchResultTile 
         key={searchResult.id}
         track={searchResult}
         playlistId={playlistId}
-        playlist={playlist}
-        setPlaylist={setPlaylist}
+        addTrack={addTrack}
       />
     )
   })
@@ -63,8 +66,6 @@ const PlaylistShowContainer = (props) => {
       <TrackTile 
         key={track.id}
         track={track}
-        playlist={playlist}
-        playlistId={playlistId}
       />
     )
   })
