@@ -38,7 +38,7 @@ const PlaylistsIndexContainer = (props) => {
     <div className="playlists-index">
       <div className="links">
         <Link to='/'>Return Home</Link>
-        <Link to='/playlists/new'>Create Playlist</Link>
+        {/* <Link to='/playlists/new'>Create Playlist</Link> */}
       </div>
       <h1 className="header">All Playlists</h1>
       <PlaylistSearchBar 

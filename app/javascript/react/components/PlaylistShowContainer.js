@@ -84,11 +84,13 @@ const PlaylistShowContainer = (props) => {
 
   useEffect(() => {
     handleGetPlaylist()
+    handleSetCurrentUser()
   },[])
 
   return (
     <div>
       <h2>{playlist.title}</h2>
+      <p>{playlist.description}</p>
       {tracksList}
       {isEditable && <input onChange={handleSearchChange} value={searchTracks} placeholder="Search tracks to add!"/>}
       {searchedResultsList}
