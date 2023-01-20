@@ -90,7 +90,7 @@ const PlaylistShowContainer = (props) => {
     <div>
       <h2>{playlist.title}</h2>
       {tracksList}
-      <input onChange={handleSearchChange} value={searchTracks} placeholder="Search tracks to add!"/>
+      {isEditable && <input onChange={handleSearchChange} value={searchTracks} placeholder="Search tracks to add!"/>}
       {searchedResultsList}
     </div>
   )
