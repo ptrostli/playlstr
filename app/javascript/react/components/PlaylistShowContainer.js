@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import TrackTile from "./TrackTile";
 import SearchResultTile from "./SearchResultTile";
+import getUser from "./Utilities/getUser";
 
 const PlaylistShowContainer = (props) => {
   const playlistId = props.match.params.playlistId
-  const [searchTracks, setSearchTracks] = useState("")
-  const [searchResults, setSearchResults] = useState([])
   const [playlist, setPlaylist] = useState({})
   const [tracks, setTracks] = useState([])
+  const [user, setUser] = useState({})
+  const [searchTracks, setSearchTracks] = useState("")
+  const [searchResults, setSearchResults] = useState([])
 
   const handleGetPlaylist = async() => {
     try {
@@ -22,6 +24,13 @@ const PlaylistShowContainer = (props) => {
       setTracks(fetchedPlaylist["tracks"])
     } catch(err) {
       console.error(`ERROR: ${err.message}`)
+    }
+  }
+
+  const handleSetCurrentUser = async () => {
+    const user = await getUser()
+    if (user) {
+      setUser(user)
     }
   }
 
@@ -50,6 +59,8 @@ const PlaylistShowContainer = (props) => {
     setTracks([...tracks, track])
   }
 
+  const isEditable = playlist.user_id === user.id
+
   const searchedResultsList = searchResults.map((searchResult) => {
     return (
       <SearchResultTile 
@@ -57,6 +68,7 @@ const PlaylistShowContainer = (props) => {
         track={searchResult}
         playlistId={playlistId}
         addTrack={addTrack}
+        isEditable={isEditable}
       />
     )
   })

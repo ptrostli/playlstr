@@ -7,10 +7,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def admin?
-    role == "admin"
+    role == "Admin"
   end
 
   def member?
-    role == "member"
+    role == "Member"
   end
 end

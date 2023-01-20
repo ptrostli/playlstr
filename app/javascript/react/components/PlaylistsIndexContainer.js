@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PlaylistTile from "./PlaylistTile";
+import PlaylistSearchBar from "./PlaylistSearchBar";
 
-const HomePage = (props) => {
+const PlaylistsIndexContainer = (props) => {
   const [playlists, setPlaylists] = useState([])
 
   const handleGetPlaylists = async() => {
@@ -19,6 +21,10 @@ const HomePage = (props) => {
     }
   }
 
+  useEffect(() => {
+    handleGetPlaylists()
+  },[])
+
   const playlistsList = playlists.map((playlist) => {
     return (
       <PlaylistTile 
@@ -28,15 +34,20 @@ const HomePage = (props) => {
     )
   })
 
-  useEffect(() => {
-    handleGetPlaylists()
-  },[])
-
   return (
-    <div className="home-page">
+    <div className="playlists-index">
+      <div className="links">
+        <Link to='/'>Return Home</Link>
+        <Link to='/playlists/new'>Create Playlist</Link>
+      </div>
+      <h1 className="header">All Playlists</h1>
+      <PlaylistSearchBar 
+        playlists={playlists}
+        setPlaylists={setPlaylists}
+      />
       {playlistsList}
     </div>
   )
 }
 
-export default HomePage
+export default PlaylistsIndexContainer

@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const SearchResultTile = (props) => {
-  const {track, playlistId, addTrack} = props
+  const { track, isEditable, playlistId, addTrack } = props
   const [shouldDisplay, setShouldDisplay] = useState(true)
 
   const handleAddTrack = async() => {
@@ -51,7 +51,7 @@ const SearchResultTile = (props) => {
 
   return (
     <div>
-      <input type="button" value="+" onClick={handleAddTrack}/>
+      <input type="button" value="+" onClick={handleAddTrack} />
       <a href={`${track.external_urls.spotify}`}><p>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artists[0].name}</p></a>
     </div>
   )
