@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
-import HomePage from './HomePage'
 import PlaylistShowContainer from './PlaylistShowContainer'
+import PlaylistsIndexContainer from './PlaylistsIndexContainer'
 
 const App = (props) => {
 
@@ -9,8 +9,8 @@ const App = (props) => {
     <div>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/playlists" component={HomePage} />
+          <Route exact path="/" component={PlaylistsIndexContainer} />
+          <Route exact path="/playlists" component={PlaylistsIndexContainer} />
           <Route exact path="/playlists/:playlistId" component={PlaylistShowContainer} />
         </Switch>
       </BrowserRouter>
