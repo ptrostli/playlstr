@@ -60,13 +60,13 @@ class Api::V1::PlaylistsController < ApiController
   end
 
   def authorize_admin
-    if !user_signed_in? || !(current_user.role == "admin")
+    if !user_signed_in? || !(current_user.role == "Admin")
       render json: {error: ["Only admins have access."]}
     end
   end
 
   def authorize_user
-    if !user_signed_in? || !(current_user.role == "member") || !(current_user.role == "admin")
+    if !user_signed_in? || !(current_user.role == "Member") || !(current_user.role == "Admin")
       render json: {error: ["Only registered users have access to this feature"]}
     end
   end
