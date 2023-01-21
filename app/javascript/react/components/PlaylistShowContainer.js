@@ -78,6 +78,8 @@ const PlaylistShowContainer = (props) => {
       <TrackTile 
         key={track.id}
         track={track}
+        playlistId={playlistId}
+        isEditable={isEditable}
       />
     )
   })

@@ -36,7 +36,7 @@ const SearchResultTile = (props) => {
       const fetchedPlaylist = await response.json()
       if (fetchedPlaylist.id) {
         addTrack(trackObject)
-        console.log(`"${track.name}" - "${track.artists[0].name}" -- has been added to ${fetchedPlaylist.title}`)
+        console.log(`"${track.name}" by ${track.artists[0].name} -- has been added to the playlist."`)
       }
     } catch(err) {
       console.error(`ERROR: ${err.message}`)
