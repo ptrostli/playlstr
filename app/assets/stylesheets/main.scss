@@ -9,19 +9,13 @@ body {
   background-color: whitesmoke;
 }
 
-
-.home-page {
-  margin: auto;
-  text-align: center;
-  .links {
-    justify-content: center;
-  }
-}
-
 .top-bar {
   background-color: white;
   height: auto;
   border-bottom: 2px solid black;
+  h2 {
+    align-self: center;
+  }
 }
 
 .top-bar-logo {
@@ -32,8 +26,209 @@ body {
 }
 
 ul.user-accounts {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
   list-style-type: none;
   background-color: white;
   margin: auto;
   text-align: center;
+  a {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 5px;
+    padding: 2px 4px 2px;
+    text-shadow: 1px 1px 1.5px rgb(250, 0, 0);
+  }
+  a:hover {
+    box-shadow: 2px 2px 2px 0.5px #a4a4a4;
+    color: rgb(206, 27, 27);
+    font-family: Ubuntu, sans-serif;
+    text-shadow: 0.5px 0.5px 0.5px rgb(135, 0, 0);
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid black;
+  background-image: linear-gradient(to top, rgba(255, 204, 204, 0.506), rgb(255, 171, 171) );
+  width: 100%;
+  a {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin: 5px;
+    padding: 3px 8px 4px;
+    text-shadow: 1px 1px 1.5px rgb(250, 0, 0);
+  } a:hover {
+    box-shadow: 2px 2px 2px 0.5px #a4a4a4;
+    color: rgb(206, 27, 27);
+    font-family: Ubuntu, sans-serif;
+    text-shadow: 0.5px 0.5px 0.5px rgb(135, 0, 0);
+  }
+}
+
+.header {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-shadow: 1.5px 1.5px 1.5px rgb(225, 0, 0);
+  justify-content: center;
+}
+
+.playlist-search-bar {
+  width: 60%;
+  border: 1px;
+  margin-bottom: -1%;
+}
+
+.playlist-form-container {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    align-self: center;
+  }
+}
+
+.new-playlist-form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  margin: 5px 3rem 3rem;
+  padding: 1rem;
+  border: 4px solid rgb(135, 0, 0);
+  border-radius: 5px;
+  h5 {
+    font-style: italic;
+    font-weight: 700;
+  }
+  .create-playlist {
+    height: 4rem;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgb(151, 0, 0);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  .create-playlist:hover {
+    box-shadow: 2px 1px 1px 0.5px #a4a4a4;
+    color: rgb(0, 0, 0);
+    font-family: Ubuntu, sans-serif;
+    text-shadow: 0.5px 0.5px 0.5px rgba(46, 46, 46, 0.389);
+  }
+}
+
+.playlists-index {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.playlist-tile {
+  background-color: rgb(241, 238, 238);
+  border: 1.5px solid rgba(0, 0, 0, 0.408);
+  border-radius: 5px;
+  width: 80%;
+  margin: 3px 0px;
+  padding: 0px 1%;
+  h3 {
+    font-weight: 400;
+    color: rgb(225, 0, 0);
+    font-family: Roboto, sans-serif;
+    text-shadow: 0.5px 0.5px 2px rgb(54, 54, 54);
+  }
+  p {
+    font-family: Ubuntu, sans-serif;
+    color: rgb(38, 38, 38);
+    text-shadow: 0.5px 0.5px 1px rgb(142, 0, 0);
+  }
+}
+
+div.playlist-tile:hover {
+  background-image: linear-gradient(to top left, rgba(255,0,0,0), rgb(249, 249, 249) );
+  font-weight: bold; 
+  box-shadow: 2px 2px 2px #a4a4a4;
+  h4 {
+    color: rgb(187, 5, 5);
+    font-weight: 800;
+  }
+}
+
+.playlist-show-container {
+  margin: 0px, 5px, 5px, 5px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .track-tile{
+    justify-content: center;
+    align-self: center;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+.playlist-information {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .submission-information {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    color: gray;
+  }
+  p {
+    padding: 0px 2rem;
+    margin: 0;
+  }
+}
+
+.track-tile {
+  display: flex;
+  justify-content: stretch;
+  margin: auto;
+  p {
+    border-bottom: 1px solid rgb(155, 0, 0);
+    margin: 0;
+  }
+}
+
+.search-result-tile {
+  display: flex;
+  justify-content: stretch;
+  align-self: center;
+  margin: auto;
+  p {
+    border-bottom: 1px solid rgb(165, 0, 154);
+    margin: 0;
+  }
+}
+
+.edit-sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: gainsboro;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 2%;
+  padding: 1%;
+  h3 {
+    align-self: center;
+  }
 }
