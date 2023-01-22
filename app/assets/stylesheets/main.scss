@@ -125,6 +125,29 @@ ul.user-accounts {
   }
 }
 
+.home-page {
+  margin: auto;
+  text-align: center;
+  .links {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .site-information {
+    border-bottom: 2px solid black;
+    background-color: lightcoral;
+    margin-bottom: 3%;
+    h5 {
+      color: azure;
+      font-weight: bold;
+    }
+    .slogan {
+      font-style: italic;
+      font-family: Roboto, sans-serif;
+      color: black;
+    }
+  }
+}
+
 .playlists-index {
   display: flex;
   justify-content: center;
