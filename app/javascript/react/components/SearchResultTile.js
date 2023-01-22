@@ -50,7 +50,7 @@ const SearchResultTile = (props) => {
   const time = new Date(track.duration_ms)
 
   return (
-    <div>
+    <div className="search-result-tile">
       <input type="button" value="+" onClick={handleAddTrack} />
       <a href={`${track.external_urls.spotify}`}><p>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artists[0].name}</p></a>
     </div>

@@ -37,7 +37,7 @@ const TrackTile = (props) => {
   const time = new Date(track.length);
   
   return (
-    <div>
+    <div className="track-tile">
       {isEditable && <input type="button" value="-" onClick={handleRemoveTrack} />}
       <p><a href={`${track.external_url}`}>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artist}</a></p>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, Redirect } from "react-router-dom";
 import TrackTile from "./TrackTile";
 import SearchResultTile from "./SearchResultTile";
 import getUser from "./Utilities/getUser";
@@ -60,7 +61,7 @@ const PlaylistShowContainer = (props) => {
   }
 
   const isEditable = playlist.user_id === user.id
-
+  
   const searchedResultsList = searchResults.map((searchResult) => {
     return (
       <SearchResultTile 
@@ -88,14 +89,40 @@ const PlaylistShowContainer = (props) => {
     handleGetPlaylist()
     handleSetCurrentUser()
   },[])
+      
+  let createdAt
+  if (playlist.created_at) {
+    const created = new Date(playlist.created_at)
+    createdAt = `${created.toLocaleString()}`
+  }
+
+  // FOR DELETING PLAYLIST
+  // if (redirect === true) {
+  //   return <Redirect to ="/playlists"/>
+  // }
 
   return (
     <div>
-      <h2>{playlist.title}</h2>
-      <p>{playlist.description}</p>
-      {tracksList}
-      {isEditable && <input onChange={handleSearchChange} value={searchTracks} placeholder="Search tracks to add!"/>}
-      {searchedResultsList}
+      <div className="links">
+          <Link to="/">Return Home</Link>
+          <Link to="/playlists">All Playlists</Link>
+        </div>
+      {/* <div className="playlist-show-container edit-sections"> */}
+      <div className="playlist-show-container">
+        <div className="playlist-information">
+          <h1 className="header">{playlist.title}</h1>
+          <h5>{playlist.description}</h5>
+          <div className="submission-information">
+            <p>CREATED: {createdAt}</p>
+            <p>Submitted by: <strong>{playlist?.user?.username}</strong></p>
+          </div>        
+        </div>
+        <div className="tracks-container">
+          {tracksList}
+        </div>
+        {isEditable && <input onChange={handleSearchChange} value={searchTracks} placeholder="Search tracks to add!"/>}
+        {searchedResultsList}
+      </div>
     </div>
   )
 }
