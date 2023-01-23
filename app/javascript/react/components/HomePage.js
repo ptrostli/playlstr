@@ -1,21 +1,14 @@
-import React, { useState, useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
-  const [featuredPlaylist, setFeaturedPlaylist] = useState({})
-
-
-  useEffect(() => {
-
-  },[])
-
   return (
     <div className="home-page">
       <h5 className="links"><Link to="/playlists">All Playlists</Link></h5>
 
       <div className="about-section">
         <h3><strong>Playlstr</strong> is a web-app that allows you to view, create and share playlists by integrating the Spotify API.</h3>
-        <Link to="/users/sign_up"><p>Create an account quick & easily to get started!</p></Link>
+        <a href="/users/sign_up"><p>Create an account quick & easily to get started!</p></a>
       </div>
 
       <div>
@@ -46,6 +39,7 @@ const HomePage = () => {
           <li>Modal functionality. Add drag and drop functionality to add/remove tracks in playlist.</li>
         </ul>
       </div>
+      <br></br>
     </div>
   )
 }

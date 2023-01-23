@@ -58,7 +58,7 @@ ul.user-accounts {
   flex-direction: row;
   flex-wrap: nowrap;
   border-bottom: 2px solid black;
-  background-image: linear-gradient(to top, rgba(255, 204, 204, 0.506), rgb(255, 171, 171) );
+  background-image: linear-gradient(to bottom, rgba(255, 87, 87, 0.744), rgb(241, 32, 32) );
   width: 100%;
   a {
     background-color: black;
@@ -69,7 +69,7 @@ ul.user-accounts {
     padding: 3px 8px 4px;
     text-shadow: 1px 1px 1.5px rgb(250, 0, 0);
   } a:hover {
-    box-shadow: 2px 2px 2px 0.5px #a4a4a4;
+    box-shadow: 1px 1px 2px 0.5px #000000;
     color: rgb(206, 27, 27);
     font-family: Ubuntu, sans-serif;
     text-shadow: 0.5px 0.5px 0.5px rgb(135, 0, 0);
@@ -149,8 +149,9 @@ ul.user-accounts {
   }
   .about-section {
     border-bottom: 2px solid black;
-    background-color: lightcoral;
-    margin-bottom: 3%;
+    // background-color: #160b0b3e;
+    background-image: linear-gradient(to left, rgb(99, 99, 99), rgba(0, 0, 0, 0.301) );
+    margin-bottom: 1%;
     p {
       color: azure;
       font-weight: bold;
