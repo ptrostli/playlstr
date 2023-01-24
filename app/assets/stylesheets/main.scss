@@ -9,6 +9,35 @@ body {
   background-color: whitesmoke;
 }
 
+.flash {
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-weight: 600;
+}
+
+.devise-page {
+  margin: 20% 2%;
+  padding: 1%;
+  border: 2px solid black;
+  background-image: linear-gradient(to bottom, rgba(255, 87, 87, 0.744), rgb(241, 32, 32) );
+  h2 { 
+    font-family: Ubuntu, sans-serif;
+    text-align: center;
+    font-weight: 600;
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    a {
+      color: white;
+      padding-left: 2em;
+    }
+    input {
+      margin: 0px 1%;
+    }
+  }
+}
+
 .top-bar {
   background-color: white;
   height: auto;

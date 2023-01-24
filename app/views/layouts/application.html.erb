@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <%- flash.each do |key, value| -%>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
+    </div>
+  <%- end -%>
+
   <nav class="top-bar">
     <a href="/"><%= image_tag("playlstr-logo.png", alt: "Playlstr", class: "top-bar-logo")%></a> 
     <section class="user-section">
@@ -21,12 +27,6 @@
       </ul>
     </section>
   </nav>
-
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
 
   <%= yield %>
 
