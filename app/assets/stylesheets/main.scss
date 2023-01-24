@@ -19,6 +19,7 @@ body {
   margin: 20% 2%;
   padding: 1%;
   border: 2px solid black;
+  border-radius: 5px;
   background-image: linear-gradient(to bottom, rgba(255, 87, 87, 0.744), rgb(241, 32, 32) );
   h2 { 
     font-family: Ubuntu, sans-serif;
@@ -191,7 +192,7 @@ ul.user-accounts {
       font-style: italic;
     }
     p:hover {
-      text-shadow: 1px 1px 0.5px rgba(46, 46, 46, 0.389);
+      text-shadow: 2px 2px 2px rgba(46, 46, 46, 0.389);
     }
     .slogan {
       font-style: italic;
@@ -253,7 +254,7 @@ div.playlist-tile:hover {
   .header {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1%;
   }
 }
 
@@ -265,13 +266,23 @@ div.playlist-tile:hover {
   .submission-information {
     display: flex;
     flex-direction: row;
-    width: max-content;
+    // width: max-content;
     color: gray;
   }
+  h5 {
+    text-align: center;
+  }
   p {
-    padding: 0px 2rem;
+    padding: 0px 2%;
     margin: 0;
   }
+}
+
+.tracks-container {
+  margin: 5px 0px;
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
 }
 
 .track-tile {
