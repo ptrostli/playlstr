@@ -15,8 +15,8 @@ const HomePage = () => {
         <h4 className="header">U P C O M I N G</h4>
         <ul>
           <li className="done">Sign-up and sign-in page styling.</li>
-          <li>Track tile styling (album images, additional information, etc..).</li>
-          <li>Play samples of tracks.</li>
+          <li className="doing">Track tile styling (album images, additional information, etc..).</li>
+          <li className="doing">Play samples of tracks.</li>
           <li>Playlist reviews and ratings.</li>
           <li>Proper playlist edit page.</li>
           <li>User show page - detailing users submitted playlists, reviews and ratings.</li>
