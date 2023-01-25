@@ -15,7 +15,8 @@ const SearchResultTile = (props) => {
         external_url: track.external_urls.spotify,
         preview_url: track.preview_url,
         artist_url: track.artists[0].external_urls.spotify,
-        image: track.album.images[2].url
+        image: track.album.images[2].url,
+        uri: track.uri
       }
       const requestBody = { track: trackObject }
       const response = await fetch(`/api/v1/playlists/${playlistId}/tracks`, {
@@ -49,10 +50,17 @@ const SearchResultTile = (props) => {
 
   const time = new Date(track.duration_ms)
 
+  const spotifyUri = `https://embed.spotify.com/?uri=${track.uri}`
+
   return (
     <div className="search-result-tile">
-      <input type="button" value="+" onClick={handleAddTrack} />
-      <a href={`${track.external_urls.spotify}`}><p>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artists[0].name}</p></a>
+    {/* <div className="spotify-embeds"> */}
+      {/* <div className="spotify-embed"> */}
+      { isEditable && <input type="button" value="+" onClick={handleAddTrack} />}
+        <a href={`${track.external_urls.spotify}`}>
+        <img className="album-image" src={`${track.album.images[2].url}`} height="40" width="40"></img>
+        <p>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artists[0].name}</p>
+      </a>
     </div>
   )
 }

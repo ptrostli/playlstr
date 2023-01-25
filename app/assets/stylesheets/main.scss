@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Ubuntu:wght@400;700&display=swap');
 
-* {
-  margin: 0;
+*, *:before, *:after {
+  // margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 body {
   font-family: Ubuntu, sans-serif;
-  background-color: whitesmoke;
+  min-height: 100%;
+  background: whitesmoke;
 }
 
 .flash {
@@ -317,5 +323,29 @@ div.playlist-tile:hover {
   padding: 1%;
   h3 {
     align-self: center;
+  }
+}
+
+.spotify-embeds {
+  width: 100%; 
+}
+
+.spotify-embed {
+  background: whitesmoke;
+  
+  &:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+  
+  iframe {
+    display: block;
+    transition: opacity 0.125s;
+    .js & {
+      opacity: 0;
+      
+      &.loaded {
+        opacity: 1;
+      }
+    }
   }
 }

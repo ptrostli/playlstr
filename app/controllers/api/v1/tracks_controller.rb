@@ -30,6 +30,6 @@ class Api::V1::TracksController < ApiController
 
   private
   def track_params
-    params.require(:track).permit(:name, :artist, :album, :length, :spotify_id, :external_url, :preview_url, :image)
+    params.require(:track).permit(:name, :artist, :album, :length, :spotify_id, :external_url, :preview_url, :image, :uri)
   end
 end
