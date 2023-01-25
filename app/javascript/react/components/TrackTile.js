@@ -35,11 +35,17 @@ const TrackTile = (props) => {
   }
 
   const time = new Date(track.length);
+
+  const spotifyUri = `https://embed.spotify.com/?uri=${track.uri}`
   
   return (
-    <div className="track-tile">
-      {isEditable && <input type="button" value="-" onClick={handleRemoveTrack} />}
-      <p><a href={`${track.external_url}`}>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artist}</a></p>
+    // <div className="track-tile">
+    <div className="spotify-embeds">
+      {/* <p><img src={`${track.image}`}></img><a href={`${track.external_url}`}>{`${time.getMinutes()}:${time.getSeconds()}`} | {track.name} - {track.artist}</a></p> */}
+      {/* {isEditable && <input type="button" value="-" onClick={handleRemoveTrack} />} */}
+      <div className="spotify-embed">
+        <iframe src={spotifyUri} width="340" height="80" frameBorder="0" allowtransparency="true"></iframe>
+      </div>
     </div>
   )
 }

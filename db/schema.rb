@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_12_15_015921) do
     t.string "external_url"
     t.string "preview_url"
     t.string "image"
+    t.string "uri"
     t.bigint "playlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

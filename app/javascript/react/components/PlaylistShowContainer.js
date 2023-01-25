@@ -107,14 +107,13 @@ const PlaylistShowContainer = (props) => {
           <Link to="/">Return Home</Link>
           <Link to="/playlists">All Playlists</Link>
         </div>
-      {/* <div className="playlist-show-container edit-sections"> */}
       <div className="playlist-show-container">
         <div className="playlist-information">
           <h1 className="header">{playlist.title}</h1>
           <h5>{playlist.description}</h5>
           <div className="submission-information">
-            <p>CREATED: {createdAt}</p>
             <p>Submitted by: <strong>{playlist?.user?.username}</strong></p>
+            <p>{createdAt}</p>
           </div>        
         </div>
         <div className="tracks-container">

@@ -9,6 +9,7 @@ class CreateTracks < ActiveRecord::Migration[5.2]
       t.string :external_url
       t.string :preview_url
       t.string :image
+      t.string :uri
 
       t.belongs_to :playlist
 
